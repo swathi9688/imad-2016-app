@@ -5,6 +5,22 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var ArticleOne= {
+    title= 'Article One | Swathi Shastry',
+    heading = 'Article One',
+    date= 'OCT 8, 2016',
+    content = `  <p>
+                This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
+                </p>
+                <p>
+                This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
+                </p>
+                <p>
+                    This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
+                </p>
+                `
+};
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
