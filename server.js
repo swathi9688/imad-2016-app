@@ -6,10 +6,10 @@ var app = express();
 app.use(morgan('combined'));
 
 var ArticleOne= {
-    title= 'Article One | Swathi Shastry',
-    heading = 'Article One',
-    date= 'OCT 8, 2016',
-    content = `  <p>
+    title: 'Article One | Swathi Shastry',
+    heading: 'Article One',
+    date: 'OCT 8, 2016',
+    content : `  <p>
                 This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
                 </p>
                 <p>
@@ -21,12 +21,50 @@ var ArticleOne= {
                 `
 };
 
+function createTemple(data) {
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.heading;
+    var content=data.content;
+    var htmlTemplate: `
+        <hmtl>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width-device-width, intial-scale-1" />
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">home </a>
+                </div>
+                <hr/>
+                <h3>
+                    ${heading}
+                </h3>
+                <div>
+                    <h1>
+                       ${date}
+                    </h1>
+                </div>
+                <div> 
+                    ${content}
+                </div>
+            </div>
+        <body>
+                    
+    </html>
+    `;
+    return htmlTemplate;
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/article-one', function(req, res){
-    res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+    res.send(createTemplate(ArticleOne));
 });
 
 app.get('/article-two', function(req, res){
