@@ -27,8 +27,7 @@ button.onclick = function () {
 
 
 //submit name
-var nameInput=document.getElementById("name");
-var name=nameInput.value;
+
 var submit=document.getElementById("submit_btn");
 
 submit.onclick = function() {
@@ -41,7 +40,7 @@ submit.onclick = function() {
           // take an action
           if(request.status === 200){
                var names = request.responseText;
-               names = JSON.parse(names); 
+               names = JSON.parse(names);  
                 var list = ' ';
                 for (var i=0; i<names.length; i++) {
                     list += '<li>' + names[i] + '</li>';
@@ -52,6 +51,8 @@ submit.onclick = function() {
       }
       //no action taken
   };
+    var nameInput=document.getElementById("name");
+    var name=nameInput.value;
     //make a request
     request.open('GET',"http://swathi9688.imad.hasura-app.io/sumit-name = " + name,true);
     request.send(null);
