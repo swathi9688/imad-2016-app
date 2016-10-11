@@ -10,9 +10,9 @@ button.onclick = function () {
   
   //capture the response and store it a variable
   request.onreadystatechange = function () {
-    if(request.readystate == XMLHttpRequest.DONE)  {
+    if(request.readystate === XMLHttpRequest.DONE)  {
         // take some action
-        if(request.status == 200) {
+        if(request.status === 200) {
             var counter = request.responsetext;
              var span= document.getElementById("count");
              span.innerHTML= counter.toString();
@@ -22,7 +22,6 @@ button.onclick = function () {
   };
   //Make a Request
   
-  //render the variable in correct span
     request.open('GET',"https://swathi9688.imad.hasura-app.io/counter",true);
     request.send(null);
 };
