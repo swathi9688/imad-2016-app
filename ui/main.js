@@ -21,6 +21,6 @@ button.onclick = function () {
       //no action taken
   };
     //make a request
-    request.open("GET","http://swathi9688.imad.hasura-app.io/counter",true);
+    request.open('GET',"http://swathi9688.imad.hasura-app.io/counter",true);
     request.send(null);
 };
