@@ -5,20 +5,52 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var ArticleOne= {
-    title: 'Article One | Swathi Shastry',
-    heading: 'Article One',
-    date: 'OCT 8, 2016',
-    content : `  <p>
-                This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
-                </p>
-                <p>
-                This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
-                </p>
-                <p>
+var articles = {
+    var ArticleOne= {
+        title: 'Article One | Swathi Shastry',
+        heading: 'Article One',
+        date: 'OCT 8, 2016',
+        content : `  <p>
                     This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
-                </p>
-                `
+                    </p>
+                    <p>
+                    This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    <p>
+                        This is the content for my first article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    `
+    },
+    var ArticleTwo={
+        title: 'Article Two | Swathi Shastry',
+        heading: 'Article Two',
+        date: 'OCT 8, 2016',
+        content : `  <p>
+                    This is the content for my second article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    <p>
+                    This is the content for my second article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    <p>
+                        This is the content for my second article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    `
+    },
+    var ArticleThree= {
+        title: 'Article Three | Swathi Shastry',
+        heading: 'Article Three',
+        date: 'OCT 8, 2016',
+        content : `  <p>
+                    This is the content for my third article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    <p>
+                    This is the content for my third article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    <p>
+                        This is the content for my third article. I am really very exited to do it. I have an exam twenty three.......
+                    </p>
+                    `
+    }
 };
 
 function createTemplate(data) {
