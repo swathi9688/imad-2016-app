@@ -22,14 +22,25 @@ var button= document.getElementById("counter");
 var counter=0;
 
 button.onclick = function () {
-  //make request to counter end point
-  
+  //create a request object
+ var request = new XMLHttpRequest();
   
   //capture the response and store it a variable
-  
+  request.onreadystatechange = function () {
+    if(request.readystate == XMLHttpRequest.DONE)  {
+        // take some action
+        if(request.status == 200) {
+            var counter = request.responsetext;
+             var span= document.getElementById("count");
+             span.innerHTML= counter.toString();
+        }
+    }
+    //no action
+  };
+  //Make a Request
   
   //render the variable in correct span
   counter =counter+1;
-  var span= document.getElementById("count");
-  span.innerHTML= counter.toString();
+//  var span= document.getElementById("count");
+//  span.innerHTML= counter.toString();
 };
