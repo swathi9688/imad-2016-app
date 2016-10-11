@@ -26,7 +26,7 @@ function createTemple(data) {
     var heading=data.heading;
     var date=data.heading;
     var content=data.content;
-    var htmlTemplate: `
+    var htmlTemplate= `
         <hmtl>
         <head>
             <title>
